@@ -11,18 +11,18 @@ import {
 } from 'recharts';
 import { Link } from 'react-router-dom';
 const data = [
-	{ name: 'January', shortName: 'Jan', projects: 1 },
-	{ name: 'February', shortName: 'Feb', projects: 3 },
-	{ name: 'March', shortName: 'Mar', projects: 4 },
-	{ name: 'April', shortName: 'Apr', projects: 6 },
-	{ name: 'May', shortName: 'May', projects: 10 },
-	{ name: 'June', shortName: 'Jun', projects: 13 },
-	{ name: 'July', shortName: 'Jul', projects: 16 },
-	{ name: 'August', shortName: 'Aug', projects: 17 },
-	{ name: 'September', shortName: 'Sep', projects: 18 },
-	{ name: 'October', shortName: 'Oct', projects: 10 },
-	{ name: 'November', shortName: 'Nov', projects: 25 },
-	{ name: 'December', shortName: 'Dec', projects: 26 },
+	{ name: 'January', shortName: 'Jan', inProgress: 5, done: 2, inactive: 2 },
+	{ name: 'February', shortName: 'Feb', inProgress: 7, done: 4, inactive: 3 },
+	{ name: 'March', shortName: 'Mar', inProgress: 3, done: 0, inactive: 3 },
+	{ name: 'April', shortName: 'Apr', inProgress: 2, done: 0, inactive: 2 },
+	{ name: 'May', shortName: 'May', inProgress: 4, done: 3, inactive: 1 },
+	{ name: 'June', shortName: 'Jun', inProgress: 1, done: 1, inactive: 0 },
+	{ name: 'July', shortName: 'Jul', inProgress: 3, done: 1, inactive: 0 },
+	{ name: 'August', shortName: 'Aug', inProgress: 6, done: 2, inactive: 2 },
+	{ name: 'September', shortName: 'Sep', inProgress: 8, done: 4, inactive: 3 },
+	{ name: 'October', shortName: 'Oct', inProgress: 12, done: 5, inactive: 4 },
+	{ name: 'November', shortName: 'Nov', inProgress: 9, done: 5, inactive: 5 },
+	{ name: 'December', shortName: 'Dec', inProgress: 14, done: 4, inactive: 7 },
 ];
 
 const Dashboard = () => {
@@ -37,7 +37,6 @@ const Dashboard = () => {
 							width={500}
 							height={400}
 							data={data}
-							stackOffset='expand'
 							margin={{
 								top: 10,
 								right: 30,
@@ -51,9 +50,21 @@ const Dashboard = () => {
 							<Tooltip />
 							<Area
 								type='monotone'
-								dataKey='projects'
-								stroke='#8884d8'
-								fill='#8884d8'
+								dataKey='inProgress'
+								stroke='#535353'
+								fill='#686868'
+							/>
+							<Area
+								type='monotone'
+								dataKey='done'
+								stroke='#0f4343'
+								fill='#0a5c5c'
+							/>
+							<Area
+								type='monotone'
+								dataKey='inactive'
+								stroke='#b51b26'
+								fill='#c80815'
 							/>
 						</AreaChart>
 					</ResponsiveContainer>
