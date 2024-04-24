@@ -1,11 +1,12 @@
-import { Outlet } from "react-router-dom";
+import { Outlet } from 'react-router-dom';
+import '../assets/scss/pages.scss';
 
 const LoginPage = () => {
-  return (
-    <>
-      Test Login <Outlet />
-    </>
-  );
+	return (
+		<div className='login-page'>
+			<Outlet />
+		</div>
+	);
 };
 
 export default LoginPage;
