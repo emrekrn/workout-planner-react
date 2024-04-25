@@ -6,7 +6,7 @@ import RegisterForm from '../components/LoginPage/RegisterForm.jsx';
 import ForgotPasswordForm from '../components/LoginPage/ForgotPasswordForm.jsx';
 import StartPage from '../pages/StartPage.jsx';
 import Dashboard from '../components/StartPage/Dashboard.jsx';
-import Board from '../components/StartPage/Board.jsx';
+import Boards from '../components/StartPage/Boards.jsx';
 
 const router = createBrowserRouter([
 	{
@@ -19,7 +19,7 @@ const router = createBrowserRouter([
 			},
 			{
 				path: '/board',
-				element: <Board />,
+				element: <Boards />,
 			},
 		],
 	},

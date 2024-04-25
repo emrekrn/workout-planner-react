@@ -1,6 +1,4 @@
 import {
-	LineChart,
-	Line,
 	CartesianGrid,
 	XAxis,
 	YAxis,
@@ -9,7 +7,6 @@ import {
 	AreaChart,
 	Area,
 } from 'recharts';
-import { Link } from 'react-router-dom';
 const data = [
 	{ name: 'January', shortName: 'Jan', inProgress: 5, done: 2, inactive: 2 },
 	{ name: 'February', shortName: 'Feb', inProgress: 7, done: 4, inactive: 3 },
@@ -28,13 +25,13 @@ const data = [
 const Dashboard = () => {
 	return (
 		<>
-			<div className='mt-14 flex h-full flex-col items-center'>
+			<div className='mt-4 flex h-full flex-col items-center'>
 				<h1 className='text-5xl font-bold text-white'>Projects</h1>
 
-				<div className='mt-10 h-1/6 w-full sm:h-2/6 lg:w-5/6 xl:w-4/6 2xl:w-3/6'>
-					<ResponsiveContainer width='100%' height='100%'>
+				<div className='mt-10 w-full  lg:w-5/6 xl:w-4/6 2xl:w-3/6'>
+					<ResponsiveContainer width={'100%'} height={400} minHeight={400}>
 						<AreaChart
-							width={500}
+							width={300}
 							height={400}
 							data={data}
 							margin={{
@@ -69,7 +66,7 @@ const Dashboard = () => {
 						</AreaChart>
 					</ResponsiveContainer>
 				</div>
-				<div className='mx-10 mt-10 flex flex-wrap justify-center gap-x-7 gap-y-14 xl:w-4/6 xl:flex-nowrap'>
+				<div className='m-10 flex flex-wrap justify-center gap-x-7 gap-y-14 xl:w-4/6 xl:flex-nowrap'>
 					<div className='w-5/6 rounded-3xl ring-1 ring-gray-200 lg:mx-0 lg:flex lg:max-w-2xl'>
 						<div className='p-8 sm:p-10 lg:flex-auto'>
 							<h3 className='text-2xl tracking-tight text-white'>
